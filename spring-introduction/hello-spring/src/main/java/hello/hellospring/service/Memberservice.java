@@ -2,16 +2,18 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+//@Service
 public class Memberservice {
 
     private final MemberRepository memberRepository; // final은 한번만 사용할 수 있는 엔티티(데이터베이스 테이블과 매핑되는 자바 클래스) 정의할 때 사용
 
     //private final MemberRepository memberRepository = new MemoryMemberRepository();
-
+    //@Autowired // 스프링이 생성할때 생성자를 호출 -> 스프링 컨테이너에 있는 것을 넣어줌(주입)
     public Memberservice(MemberRepository memberRepository) {  // 직접생성하는것이 아닌 넣어주는 식으로
         this.memberRepository = memberRepository;
     } // 회원 리포지토리 코드가 회원 서비스 코드를 DI 가능하게 변경한다.
