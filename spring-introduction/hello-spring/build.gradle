@@ -18,6 +18,8 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' // html만드는 템플릿 엔진
 	implementation 'org.springframework.boot:spring-boot-starter-web'  // web
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc' // JDBC 를 활용해서 데이터베이스와 연동
+	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'  // test 라이브러리가 기본적으로 제공
 }
 
