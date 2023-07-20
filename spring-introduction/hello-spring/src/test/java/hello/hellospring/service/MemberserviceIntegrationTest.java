@@ -8,9 +8,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.offset;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
@@ -20,6 +22,7 @@ class MemberserviceIntegrationTest {
    @Autowired Memberservice memberService;
    @Autowired MemberRepository memberRepository; // test는 맨 끝단에서 생성되기에 그냥 편하게 하면됨 필드 주입
     @Test
+    //@Commit // 디비 반영
     void 회원가입() {
         // given
         Member member = new Member();
